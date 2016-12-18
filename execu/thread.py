@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+@author = 'wyx'
+@time = 16/7/21 17:20
+@annotation = '' 
+"""
+import time
+from concurrent.futures import ThreadPoolExecutor
+
+# """
+# 死锁实例
+# """
+#
+#
+# def wait_on_b():
+#     time.sleep(5)
+#     print(b.result())  # b will never complete because it is waiting on a.
+#     return 5
+#
+#
+# def wait_on_a():
+#     time.sleep(5)
+#     print(a.result())  # a will never complete because it is waiting on b.
+#     return 6
+#
+#
+# executor = ThreadPoolExecutor(max_workers=2)
+# a = executor.submit(wait_on_b)  # Future相互抢夺资源
+# b = executor.submit(wait_on_a)
+
