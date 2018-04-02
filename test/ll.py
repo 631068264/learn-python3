@@ -5,13 +5,37 @@
 @time = 16/8/19 14:45
 @annotation = '' 
 """
-for i in range(1, 3):
-    print(i)
-else:
-    print("fsdf")
-i = 1
-while i > 0:
-    i -= 1
-    print("fsdf")
-else:
-    print("add")
+
+
+class A:
+    def ping(self):
+        print('A', self)
+
+
+class B(A):
+    def pong(self):
+        print('B', self)
+
+
+class C(A):
+    def pong(self):
+        print('C', self)
+
+
+class D(B, C):
+    def ping(self):
+        super().ping()
+        print('D', self)
+
+    def pingpong(self):
+        self.ping()
+        super().ping()
+        self.pong()
+        super().pong()
+        C.pong(self)
+
+
+d = D()
+# d.ping()
+
+d.pingpong()
