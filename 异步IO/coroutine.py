@@ -8,15 +8,15 @@
 import datetime
 import asyncio
 
+if False:
+    async def hello_world():
+        print("Hello World!")
 
-async def hello_world():
-    print("Hello World!")
 
-
-loop = asyncio.get_event_loop()
-# Blocking call which returns when the hello_world() coroutine is done
-loop.run_until_complete(hello_world())
-loop.close()
+    loop = asyncio.get_event_loop()
+    # Blocking call which returns when the hello_world() coroutine is done
+    loop.run_until_complete(hello_world())
+    loop.close()
 
 
 # async def display_date(loop):
@@ -33,16 +33,16 @@ loop.close()
 # loop.run_until_complete(display_date(loop))
 # loop.close()
 
+if False:
+    async def compute(x, y):
+        print("Compute %s + %s ..." % (x, y))
+        await asyncio.sleep(1.0)
+        return x + y
 
-async def compute(x, y):
-    print("Compute %s + %s ..." % (x, y))
-    await asyncio.sleep(1.0)
-    return x + y
+    async def print_sum(x, y):
+        result = await compute(x, y)
+        print("%s + %s = %s" % (x, y, result))
 
-async def print_sum(x, y):
-    result = await compute(x, y)
-    print("%s + %s = %s" % (x, y, result))
-
-loop = asyncio.get_event_loop()
-loop.run_until_complete(print_sum(1, 2))
-loop.close()
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(print_sum(1, 2))
+    loop.close()
